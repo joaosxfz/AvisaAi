@@ -362,3 +362,69 @@ textarea:focus-visible {
     right: 32px;
   }
 }
+
+[hidden] {
+  display: none !important;
+}
+
+button.chip {
+  font: inherit;
+  font-size: 0.9rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.erro {
+  color: var(--prova);
+  font-size: 0.9rem;
+}
+
+.erro:empty {
+  display: none;
+}
+
+.saudacao {
+  padding: 16px 20px 0;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.vazio {
+  color: var(--suave);
+}
+
+.aviso.nao-lido {
+  background: #F5F6FF;
+}
+
+.aviso.nao-lido h3::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--primaria);
+}
+
+.lido-btn {
+  align-self: flex-start;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  color: var(--primaria);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lido-btn:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .saudacao {
+    padding-inline: max(20px, calc((100% - var(--largura-lista)) / 2));
+  }
+}

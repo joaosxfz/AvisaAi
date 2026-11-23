@@ -1,158 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AvisaAí</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AvisaAí</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <main class="app">
+  <main class="app">
 
-        <section class="tela" id="inicio">
-            <div class="abertura">
-                <div class="marca">AA</div>
-                <h1>AvisaAí</h1>
-                <p>Os avisos da turma num lugar só, sem se perder no meio das conversas.</p>
-            </div>
-            <div class="rodape">
-                <a class="btn" href="#identificacao">Começar</a>
-            </div>
-        </section>
+    <section class="tela" id="inicio">
+      <div class="abertura">
+        <div class="marca">AA</div>
+        <h1>AvisaAí</h1>
+        <p>Os avisos da turma num lugar só, sem se perder no meio das conversas.</p>
+      </div>
+      <div class="rodape">
+        <a class="btn" href="#identificacao">Começar</a>
+      </div>
+    </section>
 
-        <section class="tela" id="identificacao">
-            <header class="topo">
-                <a class="voltar" href="#inicio" aria-label="Voltar">←</a>
-                <h2>Quem é você?</h2>
-            </header>
-            <div class="conteudo">
-                <label>Nome
-                    <input type="text" placeholder="Seu nome">
-                </label>
-                <label>Turma
-                    <select>
-                        <option>Informática para Internet</option>
-                        <option>Administração</option>
-                        <option>Design Gráfico</option>
-                    </select>
-                </label>
-                <label>Perfil
-                    <select>
-                        <option>Aluno</option>
-                        <option>Professor</option>
-                    </select>
-                </label>
-            </div>
-            <div class="rodape">
-                <a class="btn" href="#canais">Entrar</a>
-            </div>
-        </section>
+    <section class="tela" id="identificacao">
+      <header class="topo">
+        <a class="voltar" href="#inicio" aria-label="Voltar">←</a>
+        <h2>Quem é você?</h2>
+      </header>
+      <div class="conteudo">
+        <label>Nome
+          <input type="text" id="nome" placeholder="Seu nome">
+        </label>
+        <p class="erro" id="erro-nome" role="alert"></p>
+        <label>Turma
+          <select id="turma">
+            <option>Informática para Internet</option>
+            <option>Administração</option>
+            <option>Design Gráfico</option>
+          </select>
+        </label>
+        <label>Perfil
+          <select id="perfil">
+            <option>Aluno</option>
+            <option>Professor</option>
+          </select>
+        </label>
+      </div>
+      <div class="rodape">
+        <a class="btn" id="btn-entrar" href="#canais">Entrar</a>
+      </div>
+    </section>
 
-        <section class="tela" id="canais">
-            <header class="topo">
-                <h2>Seus canais</h2>
-                <a class="sair" href="#identificacao">Sair</a>
-            </header>
-            <div class="conteudo">
-                <a class="canal" href="#avisos">
-                    <div class="avatar">TG</div>
-                    <div class="canal-info">
-                        <strong>Turma geral</strong>
-                        <span>Prova de Banco de Dados na sexta</span>
-                    </div>
-                    <span class="contador">3</span>
-                </a>
-                <a class="canal" href="#avisos">
-                    <div class="avatar">PW</div>
-                    <div class="canal-info">
-                        <strong>Programação Web</strong>
-                        <span>Entrega do projeto adiada</span>
-                    </div>
-                    <span class="contador">1</span>
-                </a>
-                <a class="canal" href="#avisos">
-                    <div class="avatar">BD</div>
-                    <div class="canal-info">
-                        <strong>Banco de Dados</strong>
-                        <span>Sem avisos novos</span>
-                    </div>
-                </a>
-            </div>
-        </section>
+    <section class="tela" id="canais">
+      <header class="topo">
+        <h2>Seus canais</h2>
+        <a class="sair" id="btn-sair" href="#identificacao">Sair</a>
+      </header>
+      <p class="saudacao" id="saudacao"></p>
+      <div class="conteudo" id="lista-canais"></div>
+    </section>
 
-        <section class="tela" id="avisos">
-            <header class="topo">
-                <a class="voltar" href="#canais" aria-label="Voltar">←</a>
-                <h2>Turma geral</h2>
-            </header>
-            <div class="filtros">
-                <span class="chip ativo">Todos</span>
-                <span class="chip">Prova</span>
-                <span class="chip">Trabalho</span>
-                <span class="chip">Evento</span>
-            </div>
-            <div class="conteudo">
-                <article class="aviso prova">
-                    <span class="tag">Prova</span>
-                    <h3>Prova de Banco de Dados</h3>
-                    <p>Sexta, às 19h, no laboratório 2. Conteúdo: modelagem e SQL básico.</p>
-                    <small>Prof. Marcelo • hoje, 14:20</small>
-                </article>
-                <article class="aviso trabalho">
-                    <span class="tag">Trabalho</span>
-                    <h3>Entrega do projeto integrador</h3>
-                    <p>O prazo foi para a próxima segunda. Enviar o link pelo portal.</p>
-                    <small>Prof. Fabiano • ontem, 18:05</small>
-                </article>
-                <article class="aviso evento">
-                    <span class="tag">Evento</span>
-                    <h3>Feira de Aplicativos</h3>
-                    <p>Cada equipe apresenta o app em até 5 minutos. Traga o projeto pronto para demonstrar.</p>
-                    <small>Coordenação • segunda, 09:40</small>
-                </article>
-            </div>
-            <a class="fab" href="#novo" aria-label="Novo aviso">+</a>
-        </section>
+    <section class="tela" id="avisos">
+      <header class="topo">
+        <a class="voltar" href="#canais" aria-label="Voltar">←</a>
+        <h2 id="titulo-canal">Canal</h2>
+      </header>
+      <div class="filtros">
+        <button class="chip ativo" type="button" data-categoria="Todos">Todos</button>
+        <button class="chip" type="button" data-categoria="Prova">Prova</button>
+        <button class="chip" type="button" data-categoria="Trabalho">Trabalho</button>
+        <button class="chip" type="button" data-categoria="Evento">Evento</button>
+      </div>
+      <div class="conteudo" id="lista-avisos"></div>
+      <a class="fab" id="btn-novo" href="#novo" aria-label="Novo aviso" hidden>+</a>
+    </section>
 
-        <section class="tela" id="novo">
-            <header class="topo">
-                <a class="voltar" href="#avisos" aria-label="Voltar">←</a>
-                <h2>Novo aviso</h2>
-            </header>
-            <div class="conteudo">
-                <label>Título
-                    <input type="text" placeholder="Ex.: Prova de sexta">
-                </label>
-                <label>Categoria
-                    <select>
-                        <option>Prova</option>
-                        <option>Trabalho</option>
-                        <option>Evento</option>
-                    </select>
-                </label>
-                <label>Mensagem
-                    <textarea rows="5" placeholder="Escreva o aviso"></textarea>
-                </label>
-            </div>
-            <div class="rodape">
-                <a class="btn" href="#confirmacao">Publicar aviso</a>
-            </div>
-        </section>
+    <section class="tela" id="novo">
+      <header class="topo">
+        <a class="voltar" href="#avisos" aria-label="Voltar">←</a>
+        <h2>Novo aviso</h2>
+      </header>
+      <div class="conteudo">
+        <label>Título
+          <input type="text" id="titulo" placeholder="Ex.: Prova de sexta">
+        </label>
+        <label>Categoria
+          <select id="categoria">
+            <option>Prova</option>
+            <option>Trabalho</option>
+            <option>Evento</option>
+          </select>
+        </label>
+        <label>Mensagem
+          <textarea id="mensagem" rows="5" placeholder="Escreva o aviso"></textarea>
+        </label>
+        <p class="erro" id="erro-aviso" role="alert"></p>
+      </div>
+      <div class="rodape">
+        <a class="btn" id="btn-publicar" href="#confirmacao">Publicar aviso</a>
+      </div>
+    </section>
 
-        <section class="tela" id="confirmacao">
-            <div class="abertura">
-                <div class="selo">✓</div>
-                <h2>Aviso publicado</h2>
-                <p>A turma já pode ver o aviso no canal.</p>
-            </div>
-            <div class="rodape">
-                <a class="btn" href="#avisos">Ver avisos</a>
-            </div>
-        </section>
+    <section class="tela" id="confirmacao">
+      <div class="abertura">
+        <div class="selo">✓</div>
+        <h2>Aviso publicado</h2>
+        <p>A turma já pode ver o aviso no canal.</p>
+      </div>
+      <div class="rodape">
+        <a class="btn" href="#avisos">Ver avisos</a>
+      </div>
+    </section>
 
-    </main>
+  </main>
+  <script src="script.js"></script>
 </body>
-
 </html>
